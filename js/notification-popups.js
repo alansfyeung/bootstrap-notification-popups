@@ -46,7 +46,7 @@
         $alert.append($alertText);
         
         var self = this;
-        self.$parent = options.$parent;
+        self.$parent = $(options.parent);
         self.$alert = $alert;
         self.appear();
         
@@ -73,6 +73,7 @@
     };
     
     Alert.DEFAULTS = {
+        parent: 'body',
         type: 'info',
         title: 'Alert',
         text: '',
