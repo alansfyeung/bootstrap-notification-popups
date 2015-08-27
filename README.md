@@ -19,15 +19,18 @@ In true Bootstrap fashion, you may use a `data-trigger=popup` attribute on any b
     <button class="btn btn-primary" data-trigger="popup">Hit me to see a popup</button>
 
 You'll also need to add other data-* attributes in order to make it worth your while
+
     <button class="btn btn-primary" data-trigger="popup" data-type="success" data-title="Headline: " data-text="You have 1 new inbox" data-time="5">Hit me</button>
 
 ### Variant 2
 Call the popup programmatically, as a jQuery extension.
+
     $.alert({ ... options ... });
 
     
 ## Options
 These options can be specified in the { ... options... } object, or can be prefixed with data-* and inserted as an attribute.
+
     type                  A string, either 'info', 'success', 'warning' or 'danger'
     title                   A short title for the popup, displayed in bold
     text                   The text body for the popup, displayed after the title
