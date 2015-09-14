@@ -1,8 +1,8 @@
 /*************
- *  Bootstrap Notification Popups
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ *  ECO BTstrap modal popups
+ *  Uses BTstrap styles to insert a popup into the top right corner
  *  Alan Yeung - 2015
- * 
+ *  xoxo
  *************/
 
 // Alerts depend on CSS in bootstrap
@@ -34,12 +34,19 @@
         var $alertSymbol = $('<div class="alert-symbol">');
         $alertSymbol.append('<span class="glyphicon '+iconClasses[options.type]+'">');
         
-        $alertText = $('<div class="alert-text"/>');
-        $alertTextTitle = $('<strong/>');
+        var $alertText = $('<div class="alert-text"/>');
+        var $alertTextTitle = $('<strong>');
         $alertTextTitle.text(options.title);
         $alertText.append($alertTextTitle);
-        $alertTextBody = $('<span/>');
-        $alertTextBody.text(' ' + options.text);
+        
+        var $alertTextBody = options.lineBreakAfterTitle ? $('<div>') : $('<span>');
+        if (options.allowTextHtml){
+            var htmlSafe = options.text.replace(/<(?!((?:\/\s*)?\b(?:br|p|b|u|strong|em|a)\b))([^>])+>/gi, '');
+            $alertTextBody.html(htmlSafe);
+        }
+        else {
+            $alertTextBody.text(' ' + options.text);
+        }
         $alertText.append($alertTextBody);
         
         $alert.append($alertSymbol);
@@ -79,7 +86,9 @@
         text: '',
         time: 10,
         classNames: '',
-        css: {}
+        css: {},
+        allowTextHtml: true,
+        lineBreakAfterTitle: true
     };
     
     Alert.prototype.appear = function(){
