@@ -6,11 +6,10 @@ Requires jQuery
 Requires the [Bootstrap3](http://getbootstrap.com/ "Bootstrap 3") framework
 Requires [CSS3 transitions compliant](http://caniuse.com/#feat=css-transitions) browser
 
-> Sorry, currently I only have the LESS source, you'll need to either compile it yourself to CSS, or include it into the Bootstrap3 LESS source then compile it. 
-
 1. Drop `/js/notification-popups.js` into your project's JS folder
-2. Drop `/src/less/alerts.less` into your LESS folder before compilation, overwriting the original alerts.less
-3. Optionally, drop `/src/less/alert-colors.less` into your LESS folder, and if so, update your bootstrap.less to import this file
+2. Either drop `/src/less/alerts.less` into your LESS folder before compilation, overwriting the original alerts.less
+3. Or use the precompiled `/css/alerts.css` file as an override to the compiled BS css.
+4. Optionally, drop `/src/less/alert-colors.less` into your LESS folder, and if so, update your bootstrap.less to import this file
 
 
 ## Using it 
